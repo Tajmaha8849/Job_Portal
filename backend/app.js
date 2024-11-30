@@ -12,12 +12,13 @@ import fileUpload from "express-fileupload";
 const app = express();
 config({ path: "./config/config.env" });
 
-// CORS setup
+const allowedOrigins = ["https://job-portal-client-nine.vercel.app"];
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL, // Use environment variable
-    methods: ["GET", "POST", "DELETE", "PUT"],
-    credentials: true,
+    origin: allowedOrigins, // Allow only this frontend URL
+    credentials: true, // Allow sending cookies
+    methods: "GET, POST, PUT, DELETE, OPTIONS", // Allowed methods
+    allowedHeaders: "Content-Type, Authorization", // Allowed headers
   })
 );
 
