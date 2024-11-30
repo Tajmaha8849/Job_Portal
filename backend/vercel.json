@@ -3,7 +3,7 @@
   "builds": [
     {
       "src":"*.js",
-      "use": "@vercel/node"  // This tells Vercel to use Node.js to run the serverless functions
+      "use": "@vercel/node" 
     }
   ],
   "routes": [
